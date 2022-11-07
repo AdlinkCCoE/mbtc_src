@@ -154,7 +154,8 @@ clean:
 	-find . -name "*dwo" -exec rm {} \;
 	-rm -rf .tmp_versions
 
-install: default
+modules_install: 
+	$(MAKE) -C $(KERNELDIR) M=$(PWD) modules_install
 
 distclean:
 	-find . -name "*.o*" -exec rm {} \;
